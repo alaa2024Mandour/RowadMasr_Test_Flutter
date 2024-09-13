@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class FirstAssignment extends StatelessWidget {
@@ -12,7 +11,7 @@ class FirstAssignment extends StatelessWidget {
         elevation: 0.0,
         leading: IconButton(
           onPressed: () {  },
-          icon: Icon(Icons.menu_rounded , size: 20,),),
+          icon: const Icon(Icons.menu_rounded , size: 20,),),
         title: const Text(
           "Assignment1",
           style: TextStyle(
@@ -22,11 +21,11 @@ class FirstAssignment extends StatelessWidget {
         actions: [
           IconButton(
             onPressed: () {  },
-            icon: Icon(Icons.search , size: 20,),),
+            icon:const Icon(Icons.search , size: 20,),),
         ],
       ),
       body: Container(
-        padding: EdgeInsets.only(top: 20),
+        padding:const EdgeInsets.only(top: 20),
         width: double.infinity,
         child: ListView.separated(
           itemBuilder: (BuildContext context, int index) {
@@ -41,14 +40,14 @@ class FirstAssignment extends StatelessWidget {
                     color:containersColor[index]
                   ),
                 ),
-                Text(
+                const Text(
                     "Center",
                   style: TextStyle(
                     fontSize: 20,
                     color: Colors.white
                   ),
                 ),
-                Positioned(
+                const Positioned(
                   top: 30,
                   left: 30,
                   child: Text(
@@ -59,7 +58,7 @@ class FirstAssignment extends StatelessWidget {
                     ),
                   ),
                 ),
-                Positioned(
+                const Positioned(
                   bottom: 30,
                   right: 30,
                   child: Text(
@@ -73,7 +72,7 @@ class FirstAssignment extends StatelessWidget {
               ],
             );
           },
-          separatorBuilder: (BuildContext context, int index) => SizedBox(height: 15,),
+          separatorBuilder: (BuildContext context, int index) => const SizedBox(height: 15,),
           itemCount: containersColor.length,),
 
       ),
