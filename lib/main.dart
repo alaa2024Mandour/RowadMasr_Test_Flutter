@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:rowad_first_flutter_project/layouts/ProfileDesign/profile.dart';
 
-import 'layouts/assignment1.dart';
+import 'layouts/assignment2/on_boarding.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,10 +16,11 @@ class MyApp extends StatelessWidget {
     return const MaterialApp(
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
-      home: FirstAssignment(),
+      home: OnBoardingScreen(),
     );
   }
 }
+
 
 class Test extends StatelessWidget {
   const Test({super.key});
@@ -77,3 +79,26 @@ class Test extends StatelessWidget {
     );
   }
 }
+
+class MyGridView extends StatelessWidget {
+  const MyGridView({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return GridView.builder(
+      itemCount: 50,
+      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 6),
+      itemBuilder: (BuildContext context, int index) {
+        return GestureDetector(
+          onTap: (){
+            print("Tapped ${index}");
+          },
+          child: Container(
+            margin: EdgeInsets.all(8),
+            color: Colors.brown,
+          ),
+        );
+      },);
+  }
+}
+
