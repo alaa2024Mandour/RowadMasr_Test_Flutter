@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:rowad_first_flutter_project/layouts/ProfileDesign/profile.dart';
-
-import 'layouts/assignment2/on_boarding.dart';
-
+import 'package:rowad_first_flutter_project/layouts/Counter/active_screen.dart';
+import 'package:rowad_first_flutter_project/layouts/assignment3/creative_app.dart';
+import 'layouts/Drawer&Navigation/home_page.dart';
+import 'layouts/Drawer&Navigation/profile.dart';
+import 'layouts/Drawer&Navigation/second_page.dart';
+import 'layouts/Drawer&Navigation/settings_page.dart';
 void main() {
   runApp(const MyApp());
 }
@@ -13,10 +15,15 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return  MaterialApp(
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
-      home: OnBoardingScreen(),
+      home:  const CreativeApp(),
+      routes: {
+        '/SecondPage' : (context) => SecondPage(),
+        '/SettingsPage' : (context) => const SettingsPage(),
+        '/ProfilePage' : (context) => ProfilePage(),
+      },
     );
   }
 }
@@ -32,22 +39,22 @@ class Test extends StatelessWidget {
         backgroundColor: Colors.amber,
         leading: IconButton(
           onPressed: () {},
-          icon: Icon(Icons.menu),
+          icon: const Icon(Icons.menu),
           color: Colors.white,
         ),
-        title: Text(
+        title: const Text(
           "First Flutter App",
           style: TextStyle(color: Colors.white),
         ),
         actions: [
           IconButton(
             onPressed: () {},
-            icon: Icon(Icons.favorite),
+            icon: const Icon(Icons.favorite),
             color: Colors.white,
           ),
           IconButton(
             onPressed: () {},
-            icon: Icon(Icons.arrow_forward_ios_rounded),
+            icon: const Icon(Icons.arrow_forward_ios_rounded),
             color: Colors.white,
           ),
         ],
@@ -65,7 +72,7 @@ class Test extends StatelessWidget {
               child: Center(
                 child: Text(
                   "$index",
-                  style: TextStyle(
+                  style: const TextStyle(
                       fontSize: 30,
                       fontWeight: FontWeight.w900,
                       color: Colors.blue),
@@ -87,14 +94,14 @@ class MyGridView extends StatelessWidget {
   Widget build(BuildContext context) {
     return GridView.builder(
       itemCount: 50,
-      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 6),
+      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 6),
       itemBuilder: (BuildContext context, int index) {
         return GestureDetector(
           onTap: (){
             print("Tapped ${index}");
           },
           child: Container(
-            margin: EdgeInsets.all(8),
+            margin: const EdgeInsets.all(8),
             color: Colors.brown,
           ),
         );

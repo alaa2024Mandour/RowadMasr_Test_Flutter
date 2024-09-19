@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:rowad_first_flutter_project/layouts/ProfileDesign/profile_items.dart';
 
 class Profile extends StatelessWidget {
   const Profile({super.key});
@@ -41,12 +42,18 @@ class Profile extends StatelessWidget {
                     backgroundColor: Colors.amber[600]
                   ),
                     child: const Text(
-                      "Upgrade 10 Pro",
+                      "Upgrade 10 PRO",
                       style: TextStyle(
                         color: Colors.black
                       ),
                     ),
-                )
+                ),
+                listTileCard(title: 'Privacy', icon: Icons.privacy_tip),
+                listTileCard(title: 'Purchase History', icon: Icons.history),
+                listTileCard(title: 'Help&Support', icon: Icons.help),
+                listTileCard(title: 'Setting', icon: Icons.settings),
+                listTileCard(title: 'Invite a friend', icon: Icons.insert_invitation),
+                listTileCard(title: 'LogOut', icon: Icons.logout),
               ],
             ),
           ),
